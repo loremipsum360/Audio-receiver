@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Thème Leanback pour Android TV -->
+    <style name="Theme.AirReceiver" parent="@style/Theme.Leanback">
+        <item name="android:windowBackground">#0D0D0D</item>
+        <item name="android:colorPrimary">#22C55E</item>
+        <item name="android:colorAccent">#22C55E</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+</resources>

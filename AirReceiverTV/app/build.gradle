@@ -1,0 +1,63 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.airreceiver.tv'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.airreceiver.tv"
+        minSdk 21          // Android 5.0 — couvre la quasi-totalité des box TV
+        targetSdk 34
+        versionCode 1
+        versionName "1.0.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            applicationIdSuffix ".debug"
+            debuggable true
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    // Packaging : exclure les doublons de META-INF
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/*.kotlin_module'
+    }
+}
+
+dependencies {
+    // Android TV / Leanback UI
+    implementation 'androidx.leanback:leanback:1.2.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.core:core:1.12.0'
+
+    // mDNS / Bonjour — nécessaire pour la découverte AirPlay
+    implementation 'org.jmdns:jmdns:3.5.8'
+
+    // Décodeur ALAC (Apple Lossless Audio Codec)
+    // Option 1 : bibliothèque open-source
+    // implementation 'org.openalac:alac-decoder:1.0'
+    //
+    // Option 2 (recommandée) : utiliser la lib native ALACDecoder
+    // via un module JNI — voir le dossier /jni dans le projet
+    //
+    // Note : si vous utilisez uniquement du PCM non compressé (cn=0),
+    // le décodeur ALAC n'est pas nécessaire.
+
+    // Tests
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+}

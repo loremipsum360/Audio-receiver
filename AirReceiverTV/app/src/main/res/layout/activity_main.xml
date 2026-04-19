@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Layout principal — conçu pour affichage sur TV (10-foot UI) -->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D0D0D"
+    android:padding="48dp">
+
+    <!-- Nom de l'app (coin haut gauche) -->
+    <TextView
+        android:id="@+id/app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:text="AIRRECEIVER TV"
+        android:textColor="#555555"
+        android:textSize="14sp"
+        android:letterSpacing="0.1"
+        android:fontFamily="sans-serif-medium" />
+
+    <!-- Adresse IP (coin haut droit) -->
+    <TextView
+        android:id="@+id/ip_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:text="—"
+        android:textColor="#444444"
+        android:textSize="13sp" />
+
+    <!-- Contenu centré -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:minWidth="300dp">
+
+        <!-- Icône / indicateur -->
+        <FrameLayout
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_horizontal">
+
+            <View
+                android:id="@+id/icon_bg"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/circle_bg" />
+
+            <View
+                android:id="@+id/status_indicator"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="4dp"
+                android:background="@drawable/indicator_gray" />
+        </FrameLayout>
+
+        <!-- Statut -->
+        <TextView
+            android:id="@+id/status_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="En attente…"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp"
+            android:fontFamily="sans-serif-medium"
+            android:layout_gravity="center_horizontal" />
+
+        <!-- Nom de l'appareil connecté -->
+        <TextView
+            android:id="@+id/device_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text=""
+            android:textColor="#666666"
+            android:textSize="16sp"
+            android:layout_gravity="center_horizontal" />
+
+        <!-- Barres d'animation audio -->
+        <LinearLayout
+            android:id="@+id/bars_container"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginTop="24dp"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:gravity="bottom"
+            android:visibility="invisible">
+
+            <View android:id="@+id/bar1"
+                android:layout_width="5dp" android:layout_height="20dp"
+                android:layout_marginHorizontal="2dp"
+                android:background="#22C55E" />
+            <View android:id="@+id/bar2"
+                android:layout_width="5dp" android:layout_height="28dp"
+                android:layout_marginHorizontal="2dp"
+                android:background="#22C55E" />
+            <View android:id="@+id/bar3"
+                android:layout_width="5dp" android:layout_height="16dp"
+                android:layout_marginHorizontal="2dp"
+                android:background="#22C55E" />
+            <View android:id="@+id/bar4"
+                android:layout_width="5dp" android:layout_height="32dp"
+                android:layout_marginHorizontal="2dp"
+                android:background="#22C55E" />
+            <View android:id="@+id/bar5"
+                android:layout_width="5dp" android:layout_height="22dp"
+                android:layout_marginHorizontal="2dp"
+                android:background="#22C55E" />
+            <View android:id="@+id/bar6"
+                android:layout_width="5dp" android:layout_height="14dp"
+                android:layout_marginHorizontal="2dp"
+                android:background="#22C55E" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Instructions bas de l'écran -->
+    <TextView
+        android:id="@+id/hint_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Sur votre iPhone ou Mac → AirPlay → sélectionnez cette box"
+        android:textColor="#333333"
+        android:textSize="14sp" />
+
+</RelativeLayout>

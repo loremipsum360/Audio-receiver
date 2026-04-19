@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AirReceiver TV</string>
+    <string name="status_waiting">En attente de connexion AirPlay…</string>
+    <string name="status_connected">Connecté</string>
+    <string name="hint">Sur votre iPhone ou Mac → AirPlay → sélectionnez cette box</string>
+</resources>
